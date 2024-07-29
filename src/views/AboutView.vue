@@ -1,6 +1,36 @@
+<script setup>
+import axios from 'axios';
+import { ref } from 'vue';
+
+const uri = import.meta.env.VITE_API_ENDPOINT_SUPPORT
+const listCharacters = ref([])
+
+axios.get(uri)
+  .then(function (response) {
+
+    listCharacters.value = response.data
+    // Mostramos los datos obtenidos en la consola 
+    console.log(listCharacters.value.items[0].name);
+
+  })
+  .catch(function (error) {
+
+    // Si hubo algun error mostramos algo 
+    console.log(error);
+
+  })
+  .finally(function () {
+
+    // Se ejecuto sin problemas 
+
+  });
+
+</script>
+
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+
   </div>
 </template>
 
