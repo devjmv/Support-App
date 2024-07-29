@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import './assets/main.css'
 
 import { createApp } from 'vue'
@@ -14,3 +15,5 @@ app.use(router)
 //app.config.globalProperties.$axios = axiosInstance
 
 app.mount('#app')
+
+import "bootstrap/dist/js/bootstrap.min";
