@@ -3,14 +3,16 @@ import axios from 'axios';
 import { ref } from 'vue';
 
 const uri = import.meta.env.VITE_API_ENDPOINT_SUPPORT
-const listCharacters = ref([])
+const tikets = ref([])
 
 axios.get(uri)
   .then(function (response) {
 
-    listCharacters.value = response.data
+    tikets.value = response.data
     // Mostramos los datos obtenidos en la consola 
-    console.log(listCharacters.value.items[0].name);
+    tikets.value.forEach(element => {
+      console.log(element.name);
+    });
 
   })
   .catch(function (error) {
